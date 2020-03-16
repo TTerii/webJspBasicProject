@@ -1,0 +1,79 @@
+<include>
+
+1. include
+-jsp = java + html
+
+jsp 태그의 분류
+-Script tag
+<%= %>
+<%@ %>
+<% %>
+
+-action tag
+스크립트태그, 주석, 디렉티브 태그와 함께 jsp페이지를 이루고 있는 요소
+	<jsp:include/>
+	<jsp:forward/>
+	.
+	.
+	.
+	
+	
+-directive tag
+jsp가 jsp컨테이너에게 어떠한 메세지를 보내기 위한 태그들
+<https://snoopy81.tistory.com/137 참고>
+
+태그의 종류
+-단일태그
+ex. <br> (== <br/>)
+-시작과 종료태그
+-둘 다
+<jsp:include/>
+
+
+2.경로
+-절대경로
+C부터 시작함
+(ex. C:\Users\RYUDH\Desktop\대학교)
+
+-상대경로
+현재 파일을 기준으로 찾으려는 파일의 위치
+
+상대경로 지정법
+1) /  --> 그 파일의 시작지점 
+2) ./  --> 그 파일이 소속된 폴더 , 생략가능(잘안씀)
+3) ../  --> ./의 상위폴더
+*) ../../ --> ../의 상위폴더
+
+3.실습
+-이클래스를 와 비슷한 형식을 만들기위해 <jsp:include/>를 사용한다!
+-layout.jsp를 틀로 사용해 각 위치에 calender.jsp, logo.jsp... 을 집어넣는다.
+
+----------
+webcontent
+	include
+		contents
+			-calender.jsp
+		main
+			-layout.jsp <기준>
+			-logo.jsp
+			sugang
+				-sugang.jsp
+		-menu.jsp
+----------
+
+4.문제
+1) layout.jsp를 기준으로 각각의 위치를 표현하라
+(1) calender.jsp
+	"../contents/calender.jsp"
+(2) menu.jsp
+	"../menu.jsp"
+(3) logo.jsp
+	"./logo.jsp"
+(4) sugang.jsp
+	"./sugang/sugang.jsp"
+	
+2) 다음 경로를 /를 사용해 표현하라
+C:\Users\RYUDH\Desktop\대학교 안에 저장된 html.txt 파일
+	"/Users\RYUDH\Desktop\대학교/html.txt"
+
+
